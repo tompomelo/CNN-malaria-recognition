@@ -63,5 +63,3 @@ classifier.fit_generator(training_set,
                          epochs = 15,
                          validation_data = test_set,
                          validation_steps = 2000)
-
-# Current acc = 99%, val_acc = 94%
