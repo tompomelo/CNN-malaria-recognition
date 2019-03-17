@@ -22,7 +22,10 @@ classifier = Sequential()
 classifier.add(Conv2D(32, (3, 3), input_shape = (64, 64, 3), activation = 'relu'))
 
 classifier.add(MaxPooling2D(pool_size = (2, 2)))
-
+classifier.add(Conv2D(32, (3, 3), activation = 'relu'))
+classifier.add(MaxPooling2D(pool_size = (2, 2)))
+classifier.add(Conv2D(32, (3, 3), activation = 'relu'))
+classifier.add(MaxPooling2D(pool_size = (2, 2)))
 classifier.add(Conv2D(32, (3, 3), activation = 'relu'))
 classifier.add(MaxPooling2D(pool_size = (2, 2)))
 
@@ -56,8 +59,8 @@ test_set = test_datagen.flow_from_directory('cell_images/test_set',
 
 classifier.fit_generator(training_set,
                         # shuffle = True,
-                         steps_per_epoch = 8000,
-                         epochs = 25,
+                         steps_per_epoch = 6000,
+                         epochs = 15,
                          validation_data = test_set,
                          validation_steps = 2000)
 
